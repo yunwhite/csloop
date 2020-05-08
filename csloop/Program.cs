@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace csloop
@@ -18,6 +19,29 @@ namespace csloop
                 count++;
             }
             Console.WriteLine(count + "만큼 반복함");
+
+            string[] arr = { "사과", "배", "포도", "딸기", "바나나"};
+            foreach (string item in arr)
+            {
+                Console.WriteLine(item);
+            }
+
+            int x = 1;
+            while (x < 50)
+            {
+                Console.Clear();
+                Console.SetCursorPosition(x, 5);
+
+                if (x % 3 == 0)
+                    Console.WriteLine(" __@");
+                else if (x % 3 == 1)
+                    Console.WriteLine("_^@");
+                else
+                    Console.WriteLine("^_@");
+
+                Thread.Sleep(100);
+                x++;
+            }
         }
     }
 }
